@@ -1,5 +1,10 @@
-import { CurrentSavedPeople, DonutChart } from "./components";
-import { donutData } from "./mocks";
+import {
+  CurrentSavedPeople,
+  DonutChart,
+  Prisoners,
+  ActionsTaken,
+} from "./components";
+import { donutData, prisoners, actionsTaken } from "./mocks";
 import "./App.scss";
 
 function App() {
@@ -9,6 +14,8 @@ function App() {
         <DonutChart data={donutData} />
         <CurrentSavedPeople />
       </div>
+      <Prisoners data={prisoners} />
+      <ActionsTaken data={actionsTaken} />
     </div>
   );
 }

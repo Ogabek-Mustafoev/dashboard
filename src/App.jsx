@@ -1,5 +1,12 @@
-import { CurrentSavedPeople, DonutChart, ProgressCard } from "./components";
+import {
+  CurrentSavedPeople,
+  DonutChart,
+  ProgressCard,
+  SavedInformationCard,
+} from "./components";
 import { donutData, progressData } from "./mocks";
+import { savedCard } from "./mocks/saved-card";
+
 import "./App.scss";
 
 function App() {
@@ -23,8 +30,16 @@ function App() {
         <CurrentSavedPeople />
         <CurrentSavedPeople />
       </div>
+      <div className="saved__wrapper">
+        {savedCard?.map((res) => (
+          <SavedInformationCard
+            title="Saqlash muddati bo’yicha"
+            key={res?.id}
+            {...res}
+          />
+        ))}
+      </div>
     </div>
-  
   );
 }
 

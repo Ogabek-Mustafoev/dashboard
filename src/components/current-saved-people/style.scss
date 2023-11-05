@@ -1,3 +1,23 @@
 .peopleSaved {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  flex-grow: 1;
+  > div:first-child {
+    .card_subtitle {
+      text-align: right;
+      max-width: 300px;
+    }
+  }
+  > div:last-child {
+    margin-top: 2rem;
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      > div {
+        gap: 0.5rem;
+      }
+    }
+  }
 }

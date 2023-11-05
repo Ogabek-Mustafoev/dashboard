@@ -6,14 +6,20 @@
   color: rgba(76, 78, 100, 0.87);
 }
 
-
-
+@mixin media($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
 
 .app {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
+  @include media(576px) {
+    padding: 1rem;
+  }
 }
 
 .row {
@@ -60,34 +66,29 @@
   gap: 1rem;
 }
 .shadowed {
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.288);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
   border-radius: 0.8rem;
 }
+.progress_wrapper {
+  flex-grow: 1;
+}
+.current_saved-wrapper {
+  flex-wrap: wrap;
+}
 
-@mixin media($size) {
-	@media only screen and (max-width: $size) {
-	  @content;
-	}
+.top__card_wrapp {
+  @include media(1070px) {
+    flex-wrap: wrap;
   }
-
-.saved__wrapper{
+}
+.saved__wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
-  @include media(976px){
+  @include media(976px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @include media(576px){
+  @include media(576px) {
     grid-template-columns: 1fr;
   }
-}
-
-
-
-
-
-
-@media screen and (max-width: 800px) {
-}
-@media screen and (max-width: 530px) {
 }

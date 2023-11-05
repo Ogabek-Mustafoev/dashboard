@@ -1,0 +1,100 @@
+@mixin media($size) {
+	@media only screen and (max-width: $size) {
+	  @content;
+	}
+  }
+.saved__card {
+  max-width: 450px;
+  min-height: 434px;
+  @include media(576px){
+    width: 100%;
+  }
+  &__header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 32px;
+      letter-spacing: 0.15px;
+      color: var(--light-text-primary, rgba(76, 78, 100, 0.87));
+    }
+    .sub__title {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      span {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.17px;
+        text-transform: uppercase;
+        color: var(--light-text-primary, rgba(76, 78, 100, 0.87));
+      }
+    }
+  }
+  .line {
+    margin-top: -10px;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+  }
+  &__body {
+    .card__content__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      .card_content {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .img {
+          width: 50px;
+          height: 50px;
+          background: #f7f7f9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          img {
+            width: 50%;
+          }
+        }
+        span {
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+          letter-spacing: 0.15px;
+          color: var(--light-text-primary, rgba(76, 78, 100, 0.87));
+        }
+      }
+    }
+    .amount {
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: bold;
+      line-height: 20px;
+      padding: 0 8px;
+      letter-spacing: 0.14px;
+      color: var(--light-primary-main, #666cff);
+      border-radius: 64px;
+      background: var(
+        --light-custom-background-primary-background,
+        linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.88) 0%,
+          rgba(255, 255, 255, 0.88) 100%
+        ),
+        #666cff
+      );
+    }
+  }
+}

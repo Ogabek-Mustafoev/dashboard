@@ -6,6 +6,9 @@
   color: rgba(76, 78, 100, 0.87);
 }
 
+
+
+
 .app {
   display: flex;
   flex-direction: column;
@@ -60,6 +63,30 @@
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.288);
   border-radius: 0.8rem;
 }
+
+@mixin media($size) {
+	@media only screen and (max-width: $size) {
+	  @content;
+	}
+  }
+
+.saved__wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  @include media(976px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media(576px){
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
 @media screen and (max-width: 800px) {
 }
 @media screen and (max-width: 530px) {

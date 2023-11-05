@@ -1,0 +1,30 @@
+.donut {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .donut-chart {
+    margin-top: .8rem;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+
+    .donut-segment {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      clip: rect(0, 50px, 100px, 0);
+      border-radius: 50%;
+      transform: rotate(0deg);
+      transition: 0.5s ease-in-out;
+    }
+    .percent {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
